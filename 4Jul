@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML</title>
+<meta name="Author" content="Shakumi">
+
+<script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+  </script>
+
+<style>
+body {background-color:rgb(153, 232, 238);}
+#sal:active
+{ 
+color: blue; 
+background-color: red; 
+}
+#sal:hover{ 
+    color: blue; 
+    background-color: red;
+}
+h1{ color: red; }
+
+h2{ color:green; }
+background-color: red; 
+table {
+      margin: 25px 0;
+      width: 200px;
+    }
+
+    table th, table td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    table, th, td {
+      border: 1px solid;
+      color:lightseagreen;
+    }
+</style>
+
+</head>
+<body>
+
+<section>
+
+<center><h2>Consulta</h2></center>
+<hr>
+<center><b>Tabla</b></center>
+
+<center><table>
+<thead>
+<tr>
+
+<th>Matricula</th>
+<th>Nombre</th>
+<th>Materia</th>
+<th>Edad</th>
+<th>Direccion</th>
+<th>Promedio</th>
+
+</tr>
+</thead>
+</table></center>
+</section>
+
+<section>
+<hr>
+<h2>Insertar datos</h2>
+
+
+<label for="Nombre">Nombre</label>
+<input type="text" id="Nombre">
+<br><br>
+<label for="Apellido">Apellido</label>
+<input type="text" id="Apellido">
+<br><br>
+<label for="Edad">Edad</label>
+<input type="text" id="Edad">
+<br><br>
+<label for="Matricula">Matricula</label>
+<input type="text" id="Matricula">
+<br><br>
+<label for="Telefono">Telefono</label>
+<input type="text" id="Telefono">
+<br><br>
+<label for="mat">Materia</label>
+<select name="mat" id="mat">
+<option value="matematicas">Matematicas</option>
+<option value="Español">Español</option>
+<option value="Civica">Civica</option>
+</select>
+<br>
+<br>
+<button id="sal" onclick="actualizar();">Actualizar</button>
+<br>
+</section>
+
+<br>
+
+<script>
+function actualizar () {
+var x = document.getElementById("Nombre").value;
+var z = document.getElementById("Apellido").value;
+var c = document.getElementById("Edad").value;
+var v = document.getElementById("Matricula").value;
+var b = document.getElementById("Telefono").value;
+var y = document.getElementById("mat").value;
+if (x == "") {
+    alert("El campo debe ser llenado correctamente");
+    
+  }
+  else{
+   alert("La base de datos se actualizo correctamente");
+   markup = 
+   "<tr><td>" + x + "</td><td>"+ z +"</td><td>"+ c +"</td><td>"+ v +"</td><td>"+ b +"</td><td>"+ y +"</td></tr>";
+        tableBody = $("table tbody");
+        tableBody.append(markup);
+   }
+}
+</script>
+
+
+
+</body>
+</html>
